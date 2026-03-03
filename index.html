@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plataforma de Estudo - AFECC</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background:#0f172a;
+    color:white;
+}
+
+header{
+    background:#1e293b;
+    padding:15px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+    color:#38bdf8;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    background:#0ea5e9;
+    padding:10px;
+    flex-wrap:wrap;
+}
+
+nav button{
+    background:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:5px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+section{
+    display:none;
+    padding:20px;
+}
+
+.active{
+    display:block;
+}
+
+.card{
+    background:#1e293b;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:8px;
+}
+
+button.resp{
+    margin-top:5px;
+    background:#38bdf8;
+    border:none;
+    padding:6px 10px;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.resposta{
+    display:none;
+    margin-top:8px;
+    color:#22c55e;
+}
+
+footer{
+    text-align:center;
+    padding:10px;
+    background:#1e293b;
+    margin-top:20px;
+    font-size:14px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+Plataforma de Revisão - AFECC (Corrente Contínua)
+</header>
+
+<nav>
+<button onclick="mostrarSecao('r1')">Natureza</button>
+<button onclick="mostrarSecao('r2')">Circuitos</button>
+<button onclick="mostrarSecao('r3')">Resistências</button>
+<button onclick="mostrarSecao('r4')">Condutores</button>
+<button onclick="mostrarSecao('r5')">Potência</button>
+</nav>
+
+<section id="r1" class="active">
+<h2>Natureza da Electricidade</h2>
+
+<div class="card">
+<p><strong>O que é electricidade?</strong></p>
+<button class="resp" onclick="toggle('a1')">Ver Resposta</button>
+<p id="a1" class="resposta">
+Conjunto de fenómenos relacionados com a presença e movimento de cargas eléctricas.
+</p>
+</div>
+</section>
+
+<section id="r2">
+<h2>Circuitos Eléctricos</h2>
+
+<div class="card">
+<p><strong>Lei de Ohm?</strong></p>
+<button class="resp" onclick="toggle('a2')">Ver Resposta</button>
+<p id="a2" class="resposta">
+V = R × I
+</p>
+</div>
+</section>
+
+<section id="r3">
+<h2>Resistências</h2>
+
+<div class="card">
+<p><strong>O que é código de cores?</strong></p>
+<button class="resp" onclick="toggle('a3')">Ver Resposta</button>
+<p id="a3" class="resposta">
+Sistema que indica valor e tolerância da resistência.
+</p>
+</div>
+</section>
+
+<section id="r4">
+<h2>Condutores</h2>
+
+<div class="card">
+<p><strong>O que influencia queda de tensão?</strong></p>
+<button class="resp" onclick="toggle('a4')">Ver Resposta</button>
+<p id="a4" class="resposta">
+Comprimento, secção transversal, material e corrente.
+</p>
+</div>
+</section>
+
+<section id="r5">
+<h2>Potência e Energia</h2>
+
+<div class="card">
+<p><strong>Fórmula da potência?</strong></p>
+<button class="resp" onclick="toggle('a5')">Ver Resposta</button>
+<p id="a5" class="resposta">
+P = V × I
+</p>
+</div>
+
+<div class="card">
+<p><strong>Fórmula da energia?</strong></p>
+<button class="resp" onclick="toggle('a6')">Ver Resposta</button>
+<p id="a6" class="resposta">
+E = P × t
+</p>
+</div>
+</section>
+
+<footer>
+Criado por Júnior - Plataforma de Estudo AFECC
+</footer>
+
+<script>
+function mostrarSecao(id){
+    let secoes = document.querySelectorAll("section");
+    secoes.forEach(sec => sec.classList.remove("active"));
+    document.getElementById(id).classList.add("active");
+}
+
+function toggle(id){
+    let x = document.getElementById(id);
+    if(x.style.display === "none"){
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+
+</body>
+</html>
